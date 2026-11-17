@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="Melissa Oliveira Alves">
+    <title>Jogo da velha com Bootstrap</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Fonte do projeto -> Nosifer  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- CSS do projeto -->
+    <link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top bg-cor-que-eu-quero">
+            <section class="container py-1">
+                <a class="navbar-brand" href="#">
+                    <img class="img-fluid" width="40em" src="images/noughts.png" alt="Cadê a imagem">
+                    <span>All Games</span>
+                </a>
+
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-items"
+                    aria-controls="navbar-items" aria-expanded="false" aria-label="Navegação diferente">
+                    <i class="bi bi-filter-square-fill"></i>
+                </button>
+
+                <section class="collapse navbar-collapse" id="navbar-items">
+                    <ul class="navbar-nav me-auto mb-0 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.google.com/search?sca_esv=9e40641db8ba5a4c&sxsrf=AKL5yDjk9nANwPqrB8Fc1nLuLKeJHtRptA:1794872626347&q=P1HARMONY+HISTORIA&source=lnms&fbs=ACAhTvwDHIJOqwlL4Oqvyxosc1dFG6Vd7Dn0nUIoITGpvdXpKky2OHt3PREf_awTIv-29GLuVgL-pXIVjBoLA7OF6Ueph_fBV4NG58qPKnHJxyAo8JAKPg3oQJ422XN04dSsl7SBQqdMj-QqIhx-3sdEB5N-7wWfDbfgtfq7or_ceW9qa_f2jwDsneDmGsaZ8GZUCKX5FuyESSF5VSsNxLvywpSAl3_rYCE0aAnv745cQ-MDN9fre60&sa=X&ved=2ahUKEwittb3K1Y2YAxXSALkGHXKyNJwQ0pQJegQIDRAB&biw=1366&bih=633&dpr=1">História</a></li>
+                        <li class="nav-item"><a class="nav-link" href="SOBRE/index.html">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#historia">Dicas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato/index.html">Contato</a></li>
+                    </ul>
+                </section>
+            </section>
+        </nav>
+    </header>
+
+    <main class="principal">
+
+        <section class="container" id="container-top">
+
+            <section class="row g-2">
+                <section class="col-12 col-md-6" id="titulo">
+                    <section class="col-12 text-center">
+                        <h4 class="primary-color">Jogo da velha</h4>
+                    </section>
+
+                    <section class="tabuleiro">
+                        <section class="celula" data-celula></section>
+                        <section class="celula" data-celula></section>
+                        <section class="celula" data-celula></section>
+                        <section class="celula" data-celula></section>
+                        <section class="celula" data-celula></section>
+                        <section class="celula" data-celula></section>
+                        <section class="celula" data-celula></section>
+                        <section class="celula" data-celula></section>
+                        <section class="celula" data-celula></section>
+                    </section>
+
+                    <section class="status text-center mt-2">
+                        <p>É a vez do jogador 1 (X)</p>
+                    </section>
+
+                    <section class="reset-button text-center mt-2">
+                        <button class="btn btn-primary" id="reset-button">Reiniciar</button>
+                    </section>
+
+                </section>
+
+                <section class="col-12 col-md-6" id="titulo">
+                    <!-- Início do slider -->
+                    <section class="col-12 text-center">
+                        <h4 class="primary-color">Slide Show</h4>
+                    </section>
+
+                    <section class="container" id="container-carousel">
+                        <section class="carousel slide" id="slider" data-bs-ride="carousel" data-bs-interval="3000">
+                            <section class="carousel-indicators">
+
+                                <button type="button" class="active" data-bs-target="#slider" data-bs-slide-to="0"
+                                    aria-current="true" aria-label="Slide 1"></button>
+
+                                <button type="button" data-bs-target="#slider" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+
+                                <button type="button" data-bs-target="#slider" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </section>
+
+                            <section class="carousel-inner">
+
+                                <section class="carousel-item active">
+                                    <img class="d-block w-100" src="images/p1h blow upp.webp" alt="">
+                                    <section class="carousel-caption">
+                                        <h4>P1HARMONY BLOW UP</h4>
+                                        <a href="https://www.google.com/search?sca_esv=9e40641db8ba5a4c&sxsrf=AKL5yDiVpPlcPN2KQO7V6Z8FvvKQEGFpaw:1794866167623&q=p1harmony+blow+up&source=lnms&fbs=ACAhTvwDHIJOqwlL4Oqvyxosc1dFG6Vd7Dn0nUIoITGpvdXpKky2OHt3PREf_awTIv-29GJ0KrUzTd0ZtjQPAUMgHvV2GafaO5JXU3tasjwpEO3KAUCdOdg3ngJ2QkhsHHyl_ugOSjVLUJe_x4hcllHJnf9eKeRvGcMMJoPgG4w2kPnPXuhijWgbm0cZOobBoPys_sFMAk-3bc7BMzUOB5Dlh8HfWJg8SvgFB8C2BFCS698bw6mM_04&sa=X&ved=2ahUKEwiTmdzCvY2YAxXmlZUCHXMlO3QQ0pQJegQIEhAB&biw=1366&bih=633&dpr=1" class="btn btn-primary">Veja além</a>
+                                    </section>
+                                </section>
+
+                                <section class="carousel-item">
+                                    <img class="d-block w-100" src="images/P1H UNIQUE.jpeg" alt="">
+                                    <section class="carousel-caption">
+                                        <h4>P1HARMONY UNIQUE</h4>
+                                        <a href="https://www.google.com/search?q=p1harmony+UNIQUE+INFORMA%C3%87%C3%95ES&sca_esv=9e40641db8ba5a4c&biw=1366&bih=633&sxsrf=AKL5yDjv5hJQyaQroIB8X_Sa2GfIwgB5ng%3A1794866985402&ei=KX_7aoeLGMPW1sQPjr7K4Q8&uact=5&oq=p1harmony+UNIQUE+INFORMA%C3%87%C3%95ES&gs_lp=Egxnd3Mtd2l6LXNlcnAiHnAxaGFybW9ueSBVTklRVUUgSU5GT1JNQcOHw5VFUzIIEAAYgAQYogQyBRAAGO8FMgUQABjvBTIFEAAY7wUyBRAAGO8FSIwzUOoNWJEucAF4AZABAJgByAGgAckIqgEFMC43LjG4AQPIAQD4AQGYAgmgAoUJwgIKEAAYRxjWBBiwA8ICDhAAGOQCGNYEGLAD2AEBwgIXEC4Y3AYYuAYY2gYY2AIYyAMYsAPYAQHCAgQQIxgnwgIFECEYoAGYAwCIBgGQBg26BgYIARABGAmSBwUxLjcuMaAHqBqyBwUwLjcuMbgH-gjCBwcwLjEuNy4xyAcjgAgB&sclient=gws-wiz-serp" class="btn btn-primary">Veja além</a>
+                                    </section>
+                                </section>
+
+                                <section class="carousel-item">
+                                    <img class="d-block w-100" src="images/P1H SIREN DEBUT.webp" alt="">
+                                    <section class="carousel-caption">
+                                        <h4>P1HARMONY DEBUT</h4>
+                                        <a href="https://www.google.com/search?sca_esv=9e40641db8ba5a4c&sxsrf=AKL5yDjFVY1hzVf5hS5MyebPk_4ShDx2tQ:1794867086049&q=p1harmony+stand+out&source=lnms&fbs=ACAhTvwDHIJOqwlL4Oqvyxosc1dFAXjcwYEUBuaHzrpm-L7dXQveQjClVhH5j80k-sjqy5D6MjwQ_BfnJFDMF8yo9M6dHBYuzUMvTzHZ14YowzbLBP3NKqIbr0pEtJOTKMyb-B-CQKbOHkG0nT5SLRt178JNO9BdgAGdr4W4zb_gZfjf80rnjHBy6WYbzvBkUvz0IMcjiNg634WoD17ySAmFhcwo1Ca9quoj7DGRHL0g1kV0ahAbATI&sa=X&ved=2ahUKEwidydT4wI2YAxVdqJUCHQFaMyYQ0pQJegQIEhAB&biw=1366&bih=633&dpr=1" class="btn btn-primary">Veja além</a>
+                                    </section>
+                                </section>
+
+                            </section>
+                        </section>
+                        <!-- Fim do slider -->
+                    </section>
+
+                    <section class="col-12 mb-3 mb-sm-0">
+                        <section class="card">
+                            <section class="card-body">
+                                <h5 class="card-title">Sobre o autor</h5>
+                                <p class="card-text">Para ver o portfólio do autor, clique abaixo.</p>
+                                <a href="https://github.com/mmell001?tab=repositories" class="btn btn-primary">Portfolio</a>
+                                <a href="curiosidades/index2.html" class="btn btn-primary">Curiosidades</a>
+                                <i class="bi bi-facebook"></i>
+                                <i class="bi bi-instagram"></i>
+                                <i class="bi bi-twitter"></i>
+                            </section>
+                        </section>
+                    </section>
+
+                </section>
+
+                <!-- Fim da row -->
+            </section>
+
+            <!-- Fim do container principal -->
+        </section>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- JS do projeto -->
+    <script src="js/myscript.js"></script>
+</body>
+
+</html>
